@@ -8,11 +8,6 @@ repos:
         language: system
         entry: npm --version
         pass_filenames: false
-      - id: install-rimraf
-        name: Install rimraf
-        language: system
-        entry: npm i -g rimraf@6.0.1
-        pass_filenames: false
       - id: install-pnpm
         name: Install pnpm
         language: system
