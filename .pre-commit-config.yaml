@@ -23,11 +23,6 @@ repos:
         language: system
         entry: pnpm run deps
         pass_filenames: false
-      - id: generate-routes
-        name: Generate routes
-        language: system
-        entry: pnpm run routes:generate
-        pass_filenames: false
       - id: run-linter
         name: Run linter
         language: system
@@ -39,7 +34,7 @@ repos:
         entry: pnpm run build
         pass_filenames: false
   - repo: https://github.com/compilerla/conventional-pre-commit
-    rev: <git sha or tag>
+    rev: v3.4.0
     hooks:
       - id: conventional-pre-commit
         stages: [commit-msg]
