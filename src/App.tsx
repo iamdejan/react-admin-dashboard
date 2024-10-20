@@ -1,6 +1,7 @@
 import { JSX } from "react";
 import { ColorModeContext, useMode } from "./theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
+import Topbar from "./scenes/global/Topbar";
 
 export default function App(): JSX.Element {
   const [theme, colorMode] = useMode();
@@ -10,7 +11,9 @@ export default function App(): JSX.Element {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <div className="app">
-          <main className="content"></main>
+          <main className="content">
+            <Topbar />
+          </main>
         </div>
       </ThemeProvider>
     </ColorModeContext.Provider>
