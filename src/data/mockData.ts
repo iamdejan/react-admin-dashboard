@@ -1,4 +1,6 @@
-export const mockDataTeam = [
+import { GridRowsProp } from "@mui/x-data-grid";
+
+export const mockDataTeam: GridRowsProp = [
   {
     id: 1,
     name: "Jon Snow",
