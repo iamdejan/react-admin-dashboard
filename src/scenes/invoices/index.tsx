@@ -1,11 +1,11 @@
 import { JSX } from "react";
-import { Box, useTheme } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 import { DataGrid, GridColDef, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
-import { mockDataContacts } from "../../data/mockData";
+import { mockDataInvoices } from "../../data/mockData";
 import Header from "../../components/Header";
 
-export default function Contacts(): JSX.Element {
+export default function Invoices(): JSX.Element {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -16,21 +16,10 @@ export default function Contacts(): JSX.Element {
       flex: 0.5
     },
     {
-      field: "registrarId",
-      headerName: "Registrar ID",
-    },
-    {
       field: "name",
       headerName: "Name",
       flex: 1,
       cellClassName: "name-column--cell"
-    },
-    {
-      field: "age",
-      headerName: "Age",
-      type: "number",
-      headerAlign: "left",
-      align: "left"
     },
     {
       field: "phone",
@@ -43,25 +32,35 @@ export default function Contacts(): JSX.Element {
       flex: 1
     },
     {
-      field: "address",
-      headerName: "Address",
-      flex: 1
+      field: "cost",
+      headerName: "Cost",
+      flex: 1,
+      renderCell: (params: {row: {cost: number}}): JSX.Element => {
+        return (
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              height: "100%"
+            }}
+          >
+            <Typography color={colors.greenAccent[500]}>
+              ${params.row.cost}
+            </Typography>
+          </Box>
+        );
+      }
     },
     {
-      field: "city",
-      headerName: "City",
-      flex: 1
-    },
-    {
-      field: "zipCode",
-      headerName: "Zip Code",
+      field: "date",
+      headerName: "Date",
       flex: 1
     }
   ];
 
   return (
     <Box m="20px">
-      <Header title="CONTACTS" subTitle="List of Contacts for Future Reference" />
+      <Header title="INVOICES" subTitle="List of Invoice Balances" />
       <Box m="40px 0 0 0" height="75vh" sx={{
         "& .MuiDataGrid-root": {
           border: "none"
@@ -83,12 +82,12 @@ export default function Contacts(): JSX.Element {
           borderTop: "none",
           backgroundColor: colors.blueAccent[700]
         },
-        "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
-          color: colors.grey[100]+" !important"
+        "& .MuiCheckbox-root": {
+          color: colors.greenAccent[200] + " !important"
         }
       }}>
         <DataGrid
-          rows={mockDataContacts}
+          rows={mockDataInvoices}
           columns={columns}
           slots={{
             toolbar: GridToolbar
