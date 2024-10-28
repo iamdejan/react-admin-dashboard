@@ -10,7 +10,7 @@
     "lint:fix": "eslint . --fix",
     "preview": "vite preview",
     "deps": "pnpm install",
-    "deps:update": "pnpm update --latest \"\\!react-pro-sidebar\" \"!@fullcalendar/*\""
+    "deps:update": "pnpm install && pnpm update --latest \"\\!react-pro-sidebar\" \"!@fullcalendar/*\""
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
