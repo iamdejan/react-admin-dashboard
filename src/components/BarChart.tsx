@@ -1,11 +1,45 @@
 import { JSX } from "react";
 import { ResponsiveBar } from "@nivo/bar";
 import { mockBarData as data } from "../data/mockData";
+import { useTheme } from "@mui/material";
+import { tokens } from "../theme";
 
-export default function BarChart(): JSX.Element {
+export default function BarChart({isDashboard=false}: {isDashboard?: boolean}): JSX.Element {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+
   return (
     <ResponsiveBar
       data={data}
+      theme={{
+        axis: {
+          domain: {
+            line: {
+              stroke: colors.grey[300]
+            }
+          },
+          legend: {
+            text: {
+              fill: colors.grey[100]
+            }
+          },
+          ticks: {
+            line: {
+              stroke: colors.grey[100],
+              strokeWidth: 1
+            },
+            text: {
+              fill: colors.grey[100],
+
+            }
+          }
+        },
+        legends: {
+          text: {
+            fill: colors.grey[100]
+          }
+        }
+      }}
       keys={[
         "hot dog",
         "burger",
@@ -69,7 +103,7 @@ export default function BarChart(): JSX.Element {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "country",
+        legend: isDashboard? undefined: "country",
         legendPosition: "middle",
         legendOffset: 32,
         truncateTickAt: 0
@@ -78,7 +112,7 @@ export default function BarChart(): JSX.Element {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "food",
+        legend: isDashboard? undefined: "food",
         legendPosition: "middle",
         legendOffset: -40,
         truncateTickAt: 0
