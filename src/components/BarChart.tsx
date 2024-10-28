@@ -29,15 +29,19 @@ export default function BarChart({isDashboard=false}: {isDashboard?: boolean}): 
               strokeWidth: 1
             },
             text: {
-              fill: colors.grey[100],
-
+              fill: colors.grey[100]
             }
           }
         },
         legends: {
           text: {
-            fill: colors.grey[100]
-          }
+            fill: colors.grey[100],
+          },
+        },
+        tooltip: {
+          container: {
+            background: colors.grey[900],
+          },
         }
       }}
       keys={[
@@ -155,6 +159,9 @@ export default function BarChart({isDashboard=false}: {isDashboard?: boolean}): 
       ]}
       role="application"
       ariaLabel="Nivo bar chart demo"
+      barAriaLabel={function (e) {
+        return `${e.id.toString()}: ${e.formattedValue} in country: ${e.indexValue.toString()}`;
+      }}
     />
   );
 }
