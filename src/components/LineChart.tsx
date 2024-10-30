@@ -62,16 +62,17 @@ export default function LineChart({isDashboard=false}: {isDashboard?: boolean}):
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "transportation",
+        legend: isDashboard? undefined : "transportation",
         legendOffset: 36,
         legendPosition: "middle",
         truncateTickAt: 0
       }}
       axisLeft={{
         tickSize: 5,
+        tickValues: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "count",
+        legend: isDashboard? undefined : "count",
         legendOffset: -40,
         legendPosition: "middle",
         truncateTickAt: 0
