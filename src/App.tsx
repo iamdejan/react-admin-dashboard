@@ -12,8 +12,8 @@ import FAQ from "./scenes/faq";
 import Bar from "./scenes/bar";
 import Pie from "./scenes/pie";
 import Line from "./scenes/line";
+import Geography from "./scenes/geography";
 // import Form from "./scenes/form";
-// import Geography from "./scenes/geography";
 import { Route, Routes } from "react-router-dom";
 
 export default function App(): JSX.Element {
@@ -37,8 +37,8 @@ export default function App(): JSX.Element {
               <Route path="/bar" element={<Bar />} />
               <Route path="/pie" element={<Pie />} />
               <Route path="/line" element={<Line />} />
+              <Route path="/geography" element={<Geography />} />
               {/* <Route path="/form" element={<Form />} /> */}
-              {/* <Route path="/geography" element={<Geography />} /> */}
             </Routes>
           </main>
         </div>
