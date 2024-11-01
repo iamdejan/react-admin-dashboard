@@ -55,7 +55,7 @@ export default function GeographyChart({isDashboard=false}: {isDashboard?: boole
       projectionTranslation={isDashboard? [0.49, 0.6]: [ 0.5, 0.5 ]}
       projectionRotation={[ 0, 0, 0 ]}
       borderWidth={0.5}
-      borderColor="#000000"
+      borderColor="#ffffff"
       legends={
         !isDashboard? [{
           anchor: "bottom-left",
