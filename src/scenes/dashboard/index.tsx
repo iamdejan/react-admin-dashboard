@@ -10,6 +10,9 @@ import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import TrafficIcon from "@mui/icons-material/Traffic";
 import LineChart from "../../components/LineChart";
 import { mockTransactions } from "../../data/mockData";
+import ProgressCircle from "../../components/ProgressCircle";
+import BarChart from "../../components/BarChart";
+import GeographyChart from "../../components/GeographyChart";
 
 export default function Dashboard(): JSX.Element {
   const theme = useTheme();
@@ -242,6 +245,69 @@ export default function Dashboard(): JSX.Element {
               </Box>
             </Box>
           ))}
+        </Box>
+
+        {/* ROW 3 */}
+        <Box
+          sx={{
+            gridColumn: "span 4",
+            gridRow: "span 2",
+            backgroundColor: colors.primary[400],
+            p: "30px"
+          }}
+        >
+          <Typography variant="h5" fontWeight="600">
+            Campaign
+          </Typography>
+          <Box
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            mt="25px"
+          >
+            <ProgressCircle size={125} />
+            <Typography
+              variant="h5"
+              color={colors.greenAccent[500]}
+              marginTop="15px"
+            >
+              $48,352 revenue generated
+            </Typography>
+            <Typography>
+              Includes extra misc expenditures and costs
+            </Typography>
+          </Box>
+        </Box>
+        <Box
+          sx={{
+            gridColumn: "span 4",
+            gridRow: "span 2",
+            backgroundColor: colors.primary[400],
+          }}
+        >
+          <Typography variant="h5" fontWeight="600" p="30px 30px 0 30px">
+            Sales Quantity
+          </Typography>
+          <Box
+            height="250px"
+            mt="-20px"
+          >
+            <BarChart isDashboard={true} />
+          </Box>
+        </Box>
+        <Box
+          sx={{
+            gridColumn: "span 4",
+            gridRow: "span 2",
+            backgroundColor: colors.primary[400],
+          }}
+        >
+          <Typography variant="h5" fontWeight="600" p="30px 30px 0 30px" mb="15px">
+            Geography-based Traffic
+          </Typography>
+          <Box height="200px">
+            <GeographyChart isDashboard={true} />
+          </Box>
         </Box>
       </Box>
     </Box>
