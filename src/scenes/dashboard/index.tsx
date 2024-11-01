@@ -3,6 +3,8 @@ import Header from "../../components/Header";
 import { Box, Button, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
+import StatBox from "../../components/StatBox";
+import EmailIcon from "@mui/icons-material/Email";
 
 export default function Dashboard(): JSX.Element {
   const theme = useTheme();
@@ -31,6 +33,54 @@ export default function Dashboard(): JSX.Element {
           />
           Download Report
         </Button>
+      </Box>
+
+      {/* GRID & CHARTS */}
+      <Box
+        display="grid"
+        gridTemplateColumns="repeat(12, 1fr)"
+        gridAutoRows="140px"
+        gap="20px"
+      >
+        {/* ROW 1 */}
+        <Box
+          sx={{
+            gridColumn: "span 3",
+            backgroundColor: colors.primary[400],
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center"
+          }}
+        >
+          <StatBox
+            title="12,361"
+            subTitle="Emails sent"
+            progress={0.75}
+            increase="+14%"
+            icon={
+              <EmailIcon sx={{ color: colors.greenAccent[600], fontSize: "26px" }} />
+            }
+          />
+        </Box>
+        <Box
+          sx={{
+            gridColumn: "span 3",
+            backgroundColor: colors.primary[400],
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center"
+          }}
+        >
+          <StatBox
+            title="431,220"
+            subTitle="Sales Obtained"
+            progress={0.5}
+            increase="+21%"
+            icon={
+              <EmailIcon sx={{ color: colors.greenAccent[600], fontSize: "26px" }} />
+            }
+          />
+        </Box>
       </Box>
     </Box>
   );
