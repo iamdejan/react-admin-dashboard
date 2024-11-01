@@ -31,22 +31,22 @@ export default function StatBox({title, subTitle, icon, progress, increase}: Sta
         <Box>
           <ProgressCircle progress={progress} />
         </Box>
+      </Box>
 
-        <Box display="flex" justifyContent="space-between" mt="2px">
-          <Typography
-            variant="h5"
-            sx={{color: colors.greenAccent[500]}}
-          >
-            {subTitle}
-          </Typography>
-          <Typography
-            variant="h5"
-            fontStyle="italic"
-            sx={{color: colors.greenAccent[600]}}
-          >
-            {increase}
-          </Typography>
-        </Box>
+      <Box display="flex" justifyContent="space-between" mt="2px">
+        <Typography
+          variant="h5"
+          sx={{color: colors.greenAccent[500]}}
+        >
+          {subTitle}
+        </Typography>
+        <Typography
+          variant="h5"
+          fontStyle="italic"
+          sx={{color: colors.greenAccent[600]}}
+        >
+          {increase}
+        </Typography>
       </Box>
     </Box>
   );

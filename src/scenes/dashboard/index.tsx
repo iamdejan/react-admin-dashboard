@@ -17,25 +17,25 @@ export default function Dashboard(): JSX.Element {
     <Box m="20px">
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header title="DASHBOARD" subTitle="Welcome to your dashboard!" />
-      </Box>
 
-      <Box>
-        <Button
-          sx={{
-            backgroundColor: colors.blueAccent[700],
-            color: colors.grey[100],
-            fontSize: "14px",
-            fontWeight: "bold",
-            padding: "10px 20px",
-          }}
-        >
-          <DownloadOutlinedIcon
+        <Box>
+          <Button
             sx={{
-              mr: "10px"
+              backgroundColor: colors.blueAccent[700],
+              color: colors.grey[100],
+              fontSize: "14px",
+              fontWeight: "bold",
+              padding: "10px 20px",
             }}
-          />
-          Download Report
-        </Button>
+          >
+            <DownloadOutlinedIcon
+              sx={{
+                mr: "10px"
+              }}
+            />
+            Download Report
+          </Button>
+        </Box>
       </Box>
 
       {/* GRID & CHARTS */}
