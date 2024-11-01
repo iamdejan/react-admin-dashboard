@@ -5,6 +5,9 @@ import { tokens } from "../../theme";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import StatBox from "../../components/StatBox";
 import EmailIcon from "@mui/icons-material/Email";
+import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
+import PersonAddIcon from "@mui/icons-material/PersonAdd";
+import TrafficIcon from "@mui/icons-material/Traffic";
 
 export default function Dashboard(): JSX.Element {
   const theme = useTheme();
@@ -77,7 +80,45 @@ export default function Dashboard(): JSX.Element {
             progress={0.5}
             increase="+21%"
             icon={
-              <EmailIcon sx={{ color: colors.greenAccent[600], fontSize: "26px" }} />
+              <PointOfSaleIcon sx={{ color: colors.greenAccent[600], fontSize: "26px" }} />
+            }
+          />
+        </Box>
+        <Box
+          sx={{
+            gridColumn: "span 3",
+            backgroundColor: colors.primary[400],
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center"
+          }}
+        >
+          <StatBox
+            title="32,441"
+            subTitle="New Clients"
+            progress={0.3}
+            increase="+5%"
+            icon={
+              <PersonAddIcon sx={{ color: colors.greenAccent[600], fontSize: "26px" }} />
+            }
+          />
+        </Box>
+        <Box
+          sx={{
+            gridColumn: "span 3",
+            backgroundColor: colors.primary[400],
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center"
+          }}
+        >
+          <StatBox
+            title="1,325,134"
+            subTitle="Traffic Inbound"
+            progress={0.8}
+            increase="+43%"
+            icon={
+              <TrafficIcon sx={{ color: colors.greenAccent[600], fontSize: "26px" }} />
             }
           />
         </Box>
